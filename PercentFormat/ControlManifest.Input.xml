@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <manifest>
-  <control namespace="Sample" constructor="PercentFormat" version="0.0.22" display-name-key="PercentFormat_Display_Key" description-key="PercentFormat_Desc_Key" control-type="standard">
+  <control namespace="Sample" constructor="PercentFormat" version="0.0.25" display-name-key="PercentFormat_Display_Key" description-key="PercentFormat_Desc_Key" control-type="standard">
     <!-- property node identifies a specific, configurable piece of data that the control expects from CDS -->
     <property name="valueToFormat" display-name-key="valueToFormat_Display_Key" description-key="valueToFormat_Desc_Key" of-type-group="DecimalGroup" usage="bound" required="true" />
     <property name="useActual" display-name-key="useActual_Display_Key" description-key="useActual_Desc_Key" of-type="Enum" usage="input" required="true" default-value="Yes">
