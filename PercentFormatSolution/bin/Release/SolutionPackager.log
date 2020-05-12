@@ -1,0 +1,19 @@
+2020-05-12 08:48:03.715 - Info	
+Packing C:\Users\briangre\source\PCF_PercentFormat\PercentFormatSolution\obj\Release\Metadata to bin\Release\PercentFormatSolution.zip
+
+2020-05-12 08:48:03.731 - Info	Processing Component: Entities
+2020-05-12 08:48:03.734 - Info	Processing Component: Roles
+2020-05-12 08:48:03.738 - Info	Processing Component: Workflows
+2020-05-12 08:48:03.739 - Info	Processing Component: FieldSecurityProfiles
+2020-05-12 08:48:03.739 - Info	Processing Component: Templates
+2020-05-12 08:48:03.739 - Info	Processing Component: EntityMaps
+2020-05-12 08:48:03.740 - Info	Processing Component: EntityRelationships
+2020-05-12 08:48:03.747 - Info	Processing Component: OrganizationSettings
+2020-05-12 08:48:03.747 - Info	Processing Component: optionsets
+2020-05-12 08:48:03.748 - Info	Processing Component: CustomControls
+2020-05-12 08:48:03.760 - Info	 - Sample.PercentFormat
+2020-05-12 08:48:03.784 - Info	Processing Component: SolutionPluginAssemblies
+2020-05-12 08:48:03.785 - Info	Processing Component: EntityDataProviders
+2020-05-12 08:48:03.805 - Info	
+Managed Pack complete.
+
