@@ -1,0 +1,37 @@
+/* pending any desired stylings */
+/* input:read-only{
+    background-color: lightgray;
+} */
+
+input#value {
+    text-align: right;
+    border-color: transparent;
+    width: 50px;
+    line-height: 2.5rem;
+    padding-right: 0.5rem;
+    padding-left: 0.5rem;
+    border-width: 1px;
+    border-style: solid;
+    font-size: 1rem;
+    font-weight: 600;
+    padding-bottom: 0px;
+    padding-top: 0px;
+    box-sizing: border-box;
+    text-overflow:ellipsis;
+    height: 2.5rem;
+}
+
+input#value:focus{
+    border-color: rgb(102,102,102);
+    color: rgb(0,0,0);
+    border-style: solid;    
+}
+
+input#value:hover {
+    border-color: rgb(102,102,102);
+    border-width: 1px;
+    border-style: solid;
+    color: rgb(0,0,0);
+    font-weight: 400;
+    
+}

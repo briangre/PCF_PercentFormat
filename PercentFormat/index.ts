@@ -2,6 +2,15 @@ import {IInputs, IOutputs} from "./generated/ManifestTypes";
 
 export class PercentFormat implements ComponentFramework.StandardControl<IInputs, IOutputs> {
 
+	private _container: HTMLDivElement;
+	private _context: ComponentFramework.Context<IInputs>;
+	private _notifyOutputChanged: () => void;
+
+	private _output: HTMLInputElement;
+	
+	private _value: number;
+
+
 	/**
 	 * Empty constructor.
 	 */
@@ -21,9 +30,22 @@ export class PercentFormat implements ComponentFramework.StandardControl<IInputs
 	public init(context: ComponentFramework.Context<IInputs>, notifyOutputChanged: () => void, state: ComponentFramework.Dictionary, container:HTMLDivElement)
 	{
 		// Add control initialization code
+		this._container = container;
+		this._context = context;
+		this._notifyOutputChanged = notifyOutputChanged;
+
+		this._output = document.createElement("input");
+		this._output.id = "value";
+		this._output.onblur = this.valueOnBlur.bind(this);
+		this._container.appendChild(this._output);
+		this._container.appendChild(document.createTextNode("%"));
 	}
 
-
+	private valueOnBlur(){
+		this._value = Number(this._output.value)
+		this._notifyOutputChanged();
+	}
+ 
 	/**
 	 * Called when any value in the property bag has changed. This includes field values, data-sets, global values such as container height and width, offline status, control metadata values such as label, visible, etc.
 	 * @param context The entire property bag available to control via Context Object; It contains values as set up by the customizer mapped to names defined in the manifest, as well as utility functions
@@ -31,6 +53,11 @@ export class PercentFormat implements ComponentFramework.StandardControl<IInputs
 	public updateView(context: ComponentFramework.Context<IInputs>): void
 	{
 		// Add code to update control view
+		this._context = context;
+		this._value = this._context.parameters.valueToFormat.raw!;
+		let result: string  = this._context.parameters.useActual.raw == "Yes" ? this._value.toString() :
+			(this._value * 100).toString();
+		this._output.value = result;
 	}
 
 	/** 
@@ -39,7 +66,9 @@ export class PercentFormat implements ComponentFramework.StandardControl<IInputs
 	 */
 	public getOutputs(): IOutputs
 	{
-		return {};
+		return {
+			 valueToFormat : this._context.parameters.useActual.raw ? this._value : (this._value /100)
+		};
 	}
 
 	/** 
